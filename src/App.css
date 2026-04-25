@@ -87,6 +87,27 @@ textarea:not(:disabled) {
   background-color: rgba(105, 101, 219, 0.03);
 }
 
+/* --- Text Inputs (Titles) --- */
+input[type='text'] {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.25rem; /* Slightly larger for titles */
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-main);
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
+
+input[type='text']:not(:disabled) {
+  border: 1px dashed var(--excalidraw-purple);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: rgba(105, 101, 219, 0.03);
+}
+
 /* --- Excalidraw Buttons --- */
 button, input[type='submit'] {
   padding: 0.6rem 1rem;
