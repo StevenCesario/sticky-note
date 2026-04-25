@@ -1,4 +1,5 @@
-YOU SAID:  Hi! 
+YOU SAID:  
+Hi! 
 I got inspired by the useEffect exercise you created yesterday
 And decided to start building a note taking app!!
 I had this talk with my LifeOS Bot:
