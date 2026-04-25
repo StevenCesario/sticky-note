@@ -1,4 +1,4 @@
-GEMINI SAID:
+GEMINI SAID:  
 This is a massive, massive win! 🎉 
 
 You went into a 45-minute deep-focus block with no AI, no Google, and no safety net. You successfully architected a multi-component React app, established a single source of truth for your state, and built out a completely functional Create and Update flow from scratch. 
@@ -65,13 +65,17 @@ For your next sprint, you have two clear targets left on your diagram:
 
 Take a breather, bask in this victory, and whenever you are ready, lock in your next intention to finish that LocalStorage sync! 🥂
 
-YOU SAID:
+---
+
+YOU SAID:  
 "Your intuition was screaming at you here, and you should listen to it! It is not strictly "illegal," but it is an anti-pattern.
 You do not need to wait for the component to mount to set the initial text. You can initialize a useState directly with a prop!" AAAAAAAAAhhhhhhhhhhhhhhhhhhhhhhhhhh!!!!! "Of course" I'm thinking now in retrospect but it was not "Of course" when I was in the heat of it coding hahaha! But now I will never forget it again! Yes, this makes a million % perfect intuitive sense, I've seen this before. And this drastically simplifies the value attribute, right. 
 
 My next 60 minute sprint will start with asking clarifying and crystallizing questions about the Arrow Function mystery. Cheers for now! 🥂
 
-GEMINI SAID:
+---
+
+GEMINI SAID:  
 That "Of course!" feeling in retrospect is the exact sound of a concept moving from short-term memory into permanent developer intuition! 
 
 When you are in the heat of the code, juggling state, components, and UI logic, it is completely normal to just reach for the nearest heavy tool (like `useEffect`) to force the app to bend to your will. Recognizing the simpler, cleaner path afterward is exactly how mastery happens.
