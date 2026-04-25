@@ -3,7 +3,7 @@ Hi!
 I got inspired by the useEffect exercise you created yesterday
 And decided to start building a note taking app!!
 I had this talk with my LifeOS Bot:
-"""
+```
 Good morning.
 
 No, I wouldn’t use “make a working v1” for a 45-minute block. That’s too big and too vague at the same time. It creates pressure without giving the rep clean edges.
@@ -65,9 +65,11 @@ That’s a first slice.
 
 If you want, use exactly that and lock it in.
 
+---
 
 Then I'm doing it. A note will just be a <textarea>, as long as I will get it to work haha! No Google, no AI, 45 minutes on the timer, with a 15 minutes crystallization recap after. Let's go
 
+---
 
 Locked in.
 
@@ -97,11 +99,11 @@ Then use the 15-minute crystallization afterward to extract:
 • what the first hidden edge was
 
 That’s a real rep. Go.
-"""
+```
 Attaching the image in question. 45 minutes have passed. I had *JUST* enough time to being able to create and edit a note! The edit functionality might be.... questionable hahaha but it works!
 Here's the code
 NoteTakingApp.jsx:
-"""
+```
 import { useEffect, useState } from "react"
 import Note from "./Note"
 import NewNote from "./NewNote";
@@ -138,9 +140,9 @@ const NoteTakingApp = () => {
 }
 
 export default NoteTakingApp
-"""
+```
 Note.jsx:
-"""
+```
 import { useEffect, useState } from 'react'
 
 const Note = ({ note, onEdit, onDelete }) => {
@@ -182,9 +184,9 @@ const Note = ({ note, onEdit, onDelete }) => {
 // Nevermind!! The first one is NOT an arrow function? Why????
 
 export default Note
-"""
+```
 NewNote.jsx:
-"""
+```
 import React, { useState } from 'react'
 
 const NewNote = ({ onCreate }) => {
@@ -206,7 +208,7 @@ const NewNote = ({ onCreate }) => {
 }
 
 export default NewNote
-"""
+```
 Let's assess and crystallize, celebrating what has been achieved while also clearing up any confusion! 🌱
 
 ---
