@@ -31,7 +31,7 @@ const Note = ({ note, onEdit, onDelete }) => {
       <textarea disabled={!isEditable} value={editedText} onChange={(e) => setEditedText(e.target.value)}></textarea>
       <br/>
       {isEditable ? <button onClick={handleSave}>Save</button> : <button onClick={() => setIsEditable(true)}>Edit</button>}
-      <button onClick={onDelete}>Delete</button>
+      <button onClick={() => onDelete(note.id)}>Delete</button>
     </div>
   )
 }

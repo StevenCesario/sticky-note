@@ -43,6 +43,10 @@ const NoteTakingApp = () => {
     setNotes(notes.map(note => note.id === id ? {...note, text: text} : note))
   }
 
+  function deleteNote(id) {
+    setNotes(notes.filter(note => note.id !== id)); // This is it, isn't it?
+  }
+
   if (isLoading) return <p>App is loading...</p>
 
   return (
@@ -54,7 +58,7 @@ const NoteTakingApp = () => {
           <NewNote onCreate={createNote} />
         </>) : (
         <>
-          {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} />)}
+          {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
         </>
       )}
     </div>
