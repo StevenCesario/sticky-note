@@ -20,14 +20,13 @@ const NoteTakingApp = () => {
   return (
     <div className="main-container">
       <h1>Note Taking App</h1>
-      {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} />)}
       {notes.length === 0 ? (
         <>
           <h2>Create your first note below!</h2>
           <NewNote onCreate={createNote} />
         </>) : (
         <>
-        
+          {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} />)}
         </>
       )}
     </div>
