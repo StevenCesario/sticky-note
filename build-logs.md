@@ -210,6 +210,9 @@ const NewNote = ({ onCreate }) => {
 export default NewNote
 ```
 Let's assess and crystallize, celebrating what has been achieved while also clearing up any confusion! 🌱
+(screenshots/systemv1.png)
+(screenshots/Screenshot_2026-04-25_08-35-27.png)
+(screenshots/Screenshot_2026-04-25_10-03-40.png)
 
 ---
 
