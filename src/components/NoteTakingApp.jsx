@@ -59,6 +59,8 @@ const NoteTakingApp = () => {
         </>) : (
         <>
           {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
+          <br/>
+          <NewNote onCreate={createNote} />
         </>
       )}
     </div>
