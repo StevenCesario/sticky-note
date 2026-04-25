@@ -20,7 +20,7 @@ const Note = ({ note, onEdit, onDelete }) => {
 
   function handleSave() {
     // Use onEdit
-    onEdit(note.id, editedText) // Switch to note as the prop so that we easily can use note.id here. Which in turn forces us to use note.text in the render
+    onEdit(note.id, editedTitle, editedText) // Switch to note as the prop so that we easily can use note.id here. Which in turn forces us to use note.text in the render
 
     // Handle the isEditable state
     setIsEditable(false);

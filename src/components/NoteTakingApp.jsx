@@ -40,7 +40,7 @@ const NoteTakingApp = () => {
   }
 
   function editNote(id, title, text) {
-    setNotes(notes.map(note => note.id === id ? { ...note, text: text } : note))
+    setNotes(notes.map(note => note.id === id ? { ...note, title: title, text: text } : note))
   }
 
   function deleteNote(id) {
