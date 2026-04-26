@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Note.css';
 
-const Note = ({ note, onEdit, onDelete }) => {
+const Note = ({ note, onEdit, onSoftDelete }) => {
   const [isEditable, setIsEditable] = useState(false);
   const [editedTitle, setEditedTitle] = useState(note.title);
   const [editedText, setEditedText] = useState(note.text);
@@ -34,7 +34,7 @@ const Note = ({ note, onEdit, onDelete }) => {
       <textarea disabled={!isEditable} value={editedText} onChange={(e) => setEditedText(e.target.value)} />
       <br/>
       {isEditable ? <button onClick={handleSave}>Save</button> : <button onClick={() => setIsEditable(true)}>Edit</button>}
-      <button onClick={() => onDelete(note.id)}>Delete</button>
+      <button onClick={() => onSoftDelete(note.id)}>Delete</button>
     </div>
   )
 }

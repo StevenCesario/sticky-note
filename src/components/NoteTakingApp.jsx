@@ -49,8 +49,13 @@ const NoteTakingApp = () => {
     setNotes(notes.map(note => note.id === id ? { ...note, title: title, text: text } : note))
   }
 
+  // This is now completely unknowingly in the past but consciously aware now in the present moment the perma delete function. And we'll create the soft delete function!
   function deleteNote(id) {
     setNotes(notes.filter(note => note.id !== id)); // This is it, isn't it?
+  }
+
+  function softDeleteNote(id) {
+    setNotes(notes.map(note => note.id === id ? {...note, isActive: false} : note)); // I believe this is it
   }
 
   // It feels like we can refactor these two modal toggle functions into one? Future refactor
@@ -71,7 +76,7 @@ const NoteTakingApp = () => {
       <div className="main-container">
         <h1>Note Taking App</h1>
         <div className="notes-grid">
-          {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
+          {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onSoftDelete={softDeleteNote} />)}
           <span className="new-note-plus" onClick={handleNewNoteModalToggle}>+</span>
         </div>
         {isNewNoteModalVisible && (
