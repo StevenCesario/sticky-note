@@ -9,6 +9,7 @@ const TrashCanModal = ({ notes, onClose }) => {
         {/* It also just clicked here; I believe we're gonna FIRSTS filter based on isActive and THEN map the NEW array to use the Note component? */}
       </div>
       <button type='button' onClick={onClose}>Close</button>
+      {/* TODO: Let the esc keyboard button act as an onClose too! */}
     </div>
   )
 }
