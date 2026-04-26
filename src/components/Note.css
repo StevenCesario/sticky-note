@@ -1,17 +1,46 @@
 /* Note.css */
 
+@keyframes slamIn {
+  0% { 
+    transform: scale(1.5) translateY(-50px) rotate(10deg); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: scale(1) translateY(0) rotate(var(--rotation)); 
+    opacity: 1; 
+  }
+}
+
 .note {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  /* Removed the strict background-color and border, keeping the shadow */
+  border-radius: 2px; /* Sticky notes have sharper edges */
   padding: 1.25rem;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15); /* Slightly harsher shadow for depth */
   display: flex;
   flex-direction: column;
+  aspect-ratio: 1 / 1; /* Makes them perfectly square! */
+  
+  /* Apply the animation and the default rotation */
+  transform: rotate(var(--rotation));
+  animation: slamIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .note:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+  /* Keep the rotation, but lift it up slightly */
+  transform: rotate(var(--rotation)) translateY(-4px) scale(1.02);
+}
+
+/* Let's make the inputs look invisible so it feels like writing on paper */
+.note input, .note textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+}
+
+.note textarea {
+  flex-grow: 1;
+  resize: none; /* Prevents breaking the square shape */
 }
