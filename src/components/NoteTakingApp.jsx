@@ -58,6 +58,10 @@ const NoteTakingApp = () => {
     setNotes(notes.map(note => note.id === id ? {...note, isActive: false} : note)); // I believe this is it
   }
 
+  function RestoreNote(id) {
+    setNotes(notes.map(note => note.id === id ? {...note, isActive: true} : note)); // And the restore function is literally just the mirror haha!
+  }
+
   // It feels like we can refactor these two modal toggle functions into one? Future refactor
   function handleNewNoteModalToggle() {
     setIsNewNoteModalVisible(!isNewNoteModalVisible); // Toggle for now until I can prove that manual true/false serves me more
