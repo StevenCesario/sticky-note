@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 // It'd be cool to pass some sort of isFirstTimeVisit or isFirstNote prop to this component but I just can't get the logic to fully work in the parent component right now. Future quality of life improvement!
-const NewNoteModal = ({ onCreate }) => {
+const NewNoteModal = ({ onCreate, onCancel }) => {
   const [newTitle, setNewTitle] = useState('');
   const [newText, setNewText] = useState('');
   const [isEmptyNoteError, setIsEmptyNoteError] = useState(false);
@@ -27,6 +27,7 @@ const NewNoteModal = ({ onCreate }) => {
       {/* <p>newText: {newText}</p> */}
       {isEmptyNoteError ? <p className="error-message">Let's not create an empty note, shall we?</p> : <p className="error-message"></p>}
       <input type='submit' value='Create note!' />
+      <button onClick={onCancel}>Cancel</button>
     </form >
   )
 }

@@ -50,7 +50,7 @@ const NoteTakingApp = () => {
     setNotes(notes.filter(note => note.id !== id)); // This is it, isn't it?
   }
 
-  function handleModal() {
+  function handleModalToggle() {
     setIsModalVisible(!isModalVisible); // Toggle for now until I can prove that manual true/false serves me more
   }
 
@@ -63,9 +63,9 @@ const NoteTakingApp = () => {
       <h1>Note Taking App</h1>
       <div className="notes-grid">
         {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
-        <span className="new-note-plus" onClick={handleModal}>+</span>
+        <span className="new-note-plus" onClick={handleModalToggle}>+</span>
       </div>
-      {isModalVisible && <NewNoteModal onCreate={createNote} />}
+      {isModalVisible && <NewNoteModal onCreate={createNote} onCancel={handleModalToggle} />}
     </div>
   )
 }
