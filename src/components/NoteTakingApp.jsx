@@ -5,6 +5,7 @@ import NewNote from "./NewNote";
 const NoteTakingApp = () => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false); // Feels like a good start
 
   // LOAD useEffect
   useEffect(() => {
