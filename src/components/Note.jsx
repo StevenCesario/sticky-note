@@ -34,7 +34,8 @@ const Note = ({ note, onEdit, onSoftDelete }) => {
       <textarea disabled={!isEditable} value={editedText} onChange={(e) => setEditedText(e.target.value)} />
       <br/>
       {isEditable ? <button onClick={handleSave}>Save</button> : <button onClick={() => setIsEditable(true)}>Edit</button>}
-      <button onClick={() => onSoftDelete(note.id)}>Delete</button>
+      {/* <p>isActive: {note.isActive ? 'True' : 'False'}</p> We can't "print a boolean", we gotta *use* the boolean haha. This works!! */}
+      <button onClick={() => onSoftDelete(note.id)}>Trash</button>
     </div>
   )
 }
