@@ -41,7 +41,7 @@ const NoteTakingApp = () => {
     // console.log('notes:', notes) // The notes array... is not set at this point?? What?? What am I missing here?
     // if (notes.length === 1) localStorage.setItem('user-notes', JSON.stringify(notes)); // This feels... a bit ugly and wrong but it works for now? It did not work and it is ugly and wrong for a reason haha! Keeping as another artifact
 
-    setIsModalVisible(false); // I believe we can use an explicit false here. "isModalVisible is not a function"? "Huuuhhhh?" Use the state function haha, silly mistake. Now it works as intended
+    setIsNewNoteModalVisible(false); // I believe we can use an explicit false here. "isModalVisible is not a function"? "Huuuhhhh?" Use the state function haha, silly mistake. Now it works as intended
   }
 
   function editNote(id, title, text) {
@@ -53,7 +53,7 @@ const NoteTakingApp = () => {
   }
 
   function handleModalToggle() {
-    setIsModalVisible(!isModalVisible); // Toggle for now until I can prove that manual true/false serves me more
+    setIsNewNoteModalVisible(!isNewNoteModalVisible); // Toggle for now until I can prove that manual true/false serves me more
   }
 
   if (isLoading) return <p>App is loading...</p>
@@ -67,7 +67,7 @@ const NoteTakingApp = () => {
         {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
         <span className="new-note-plus" onClick={handleModalToggle}>+</span>
       </div>
-      {isModalVisible && (
+      {isNewNoteModalVisible && (
         <div className="modal-overlay">
           <NewNoteModal onCreate={createNote} onCancel={handleModalToggle} />
         </div>
