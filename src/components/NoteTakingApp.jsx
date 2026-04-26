@@ -52,8 +52,13 @@ const NoteTakingApp = () => {
     setNotes(notes.filter(note => note.id !== id)); // This is it, isn't it?
   }
 
+  // It feels like we can refactor these two modal toggle functions into one? Future refactor
   function handleNewNoteModalToggle() {
     setIsNewNoteModalVisible(!isNewNoteModalVisible); // Toggle for now until I can prove that manual true/false serves me more
+  }
+
+  function handleTrashCanModalToggle() {
+    setIsTrashCanModalVisible(!isTrashCanModalVisible);
   }
 
   if (isLoading) return <p>App is loading...</p>
@@ -74,7 +79,7 @@ const NoteTakingApp = () => {
           </div>
         )}
       </div>
-      {/* <button onClick={}>TRASH CAN</button> */}
+      <button onClick={handleTrashCanModalToggle}>TRASH CAN</button>
     </>
   )
 }
