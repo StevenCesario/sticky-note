@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Note from "./Note"
-import NewNote from "./NewNote";
+import NewNoteModal from "./NewNoteModal";
 
 const NoteTakingApp = () => {
   const [notes, setNotes] = useState([]);
@@ -48,24 +48,22 @@ const NoteTakingApp = () => {
     setNotes(notes.filter(note => note.id !== id)); // This is it, isn't it?
   }
 
+  function handleModal() {
+    setIsModalVisible(!isModalVisible); // Toggle for now until I can prove that manual true/false serves me more
+  }
+
   if (isLoading) return <p>App is loading...</p>
 
+  // I'm removing the {notes.length === 0 ? conditional rendering, we're gonna do a whole bunch of conditional rendering for the user's
+  // first time visit instead, it's gonna be rad :)
   return (
     <div className="main-container">
       <h1>Note Taking App</h1>
-      {notes.length === 0 ? (
-        <>
-          <h2>Create your first note below!</h2>
-          <NewNote onCreate={createNote} />
-        </>) : (
-        <>
-          <div className="notes-grid">
-            {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
-          </div>
-          <br />
-          <NewNote onCreate={createNote} />
-        </>
-      )}
+      <div className="notes-grid">
+        {notes.map(note => <Note key={note.id} note={note} onEdit={editNote} onDelete={deleteNote} />)}
+        <span className="new-note-plus" onClick={handleModal}>+</span>
+      </div>
+      {isModalVisible && <NewNoteModal onCreate={createNote} />}
     </div>
   )
 }
