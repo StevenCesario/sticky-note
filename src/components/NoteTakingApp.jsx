@@ -81,7 +81,7 @@ const NoteTakingApp = () => {
         )}
         {isTrashCanModalVisible && (
           <div className="modal-overlay">
-            <TrashCanModal onClose={handleTrashCanModalToggle} />
+            <TrashCanModal notes={notes} onClose={handleTrashCanModalToggle} />
           </div>
         )}
       </div>
