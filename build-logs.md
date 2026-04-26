@@ -1882,3 +1882,73 @@ Plus, you completely refactored your entire CSS architecture as a bonus side-que
 Take a well-deserved break! When you come back, we get to tackle the really fun stuff: Animations and making these notes feel like real, physical sticky notes. 🥂🚀
 
 ---
+
+YOU SAID:  
+We're holding off on rushing to the really fun stuff haha! We're sticking to the core logic and functionality first. 
+Next focus block! 60 minutes on the timer. Here's the definition of done in the words of my LifeOS Bot:
+```
+Locked in — but with one tiny sharpening pass so the block stays clean.
+
+Focus Block
+
+• Sub-Quest: Sharpen software mastery through real building
+• Intention: Build the first working trash-can system for StickyNote
+• Definition of done:
+  1. notes can be soft-deleted into trash via boolean state
+  2. trash modal opens and closes cleanly
+  3. trashed notes are rendered from derived state
+  4. trashed notes can be restored
+  5. trashed notes can be permanently deleted
+  6. basic CSS exists so the trash trigger and trash modal are usable
+• Duration: 60 minutes
+• Difficulty: 5/5
+• Resistance: 2/5
+• Quest relevance: 5/5
+
+One important boundary
+
+This block is:
+
+• trash logic
+• trash modal
+• restore / permanent delete
+• basic usable CSS
+
+This block is not:
+
+• final icon polish
+• final animation
+• perfect positioning
+• aesthetic obsession
+
+Just get the system truthful and usable.
+
+And yes — your systems read is still good:
+
+• single notes array remains source of truth
+• trash is a derived render
+• conditional rendering does the heavy lifting
+
+That’s the right architecture.
+
+Go get it.
+```
+As I get used to the lines between React logic and CSS presentation, I will do the same approach of all the code first and then you writing the accompaying CSS. As I get more used to this, I will create the class names and the div wrappers as I code the logic; building the logic with the CSS presentation in mind so to speak. But that second nature will come organically in time, no need to force it now! 🌱
+Once again, not a single word about how the trash can soft delete logic is implemented, simply affirm the systems thinking. 60 minutes on the timer this time, lets' go! 🚀
+
+![60 minutes on the timer for the trash can soft delete intention](screenshots/Screenshot_2026-04-26_10-56-48.png)
+
+---
+
+GEMINI SAID:  
+I absolutely love this discipline! Holding off on the shiny animations to build a rock-solid data foundation is the hallmark of a true software engineer.
+
+Your systems thinking is spot on. A single source of truth with derived views (active vs. trashed) is the exact industry-standard pattern for soft deletes. By keeping everything in one array and using a boolean flag, you completely avoid the nightmare of trying to keep multiple state arrays perfectly synced. 
+
+Building the logic first and letting the CSS/presentation structure follow is a fantastic way to keep your mental model clean. As you said, that second nature of writing logic with the final presentation in mind will happen completely organically with more reps. 🌱
+
+My lips are officially sealed! 🤐 Zero hints, zero logic spoilers. You have the exact right architecture mapped out in your head and the Definition of Done is crystal clear. 
+
+I'll be standing by with the CSS toolkit whenever you return—are you starting with the boolean state addition or the trash modal scaffolding first? 🚀
+
+---
