@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './NoteTakingApp.css';
 import Note from "./Note";
 import NewNoteModal from "./NewNoteModal";
+import TrashCanModal from "./TrashCanModal";
 
 const NoteTakingApp = () => {
   const [notes, setNotes] = useState([]);
@@ -76,6 +77,11 @@ const NoteTakingApp = () => {
         {isNewNoteModalVisible && (
           <div className="modal-overlay">
             <NewNoteModal onCreate={createNote} onCancel={handleNewNoteModalToggle} />
+          </div>
+        )}
+        {isTrashCanModalVisible && (
+          <div className="modal-overlay">
+            <TrashCanModal onClose={handleTrashCanModalToggle} />
           </div>
         )}
       </div>
