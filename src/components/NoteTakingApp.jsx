@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
-import Note from "./Note"
+import { useEffect, useState } from "react";
+import './NoteTakingApp.css';
+import Note from "./Note";
 import NewNoteModal from "./NewNoteModal";
 
 const NoteTakingApp = () => {
