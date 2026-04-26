@@ -27,3 +27,13 @@
 .trash-can-container > button:hover {
   background-color: #c92a2a;
 }
+
+/* --- Empty State --- */
+.empty-trash-can {
+  text-align: center;
+  color: var(--text-main);
+  opacity: 0.5; /* Makes it feel soft and subtle */
+  font-weight: 500;
+  margin-top: 3rem; /* Pushes it down a bit into the empty space */
+  margin-bottom: 3rem;
+}
