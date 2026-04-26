@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Note.css';
 
-const Note = ({ note, onEdit, onSoftDelete }) => {
+const Note = ({ note, onEdit, onSoftDelete, onRestore, onPermaDelete }) => {
   const [isEditable, setIsEditable] = useState(false);
   const [editedTitle, setEditedTitle] = useState(note.title);
   const [editedText, setEditedText] = useState(note.text);
