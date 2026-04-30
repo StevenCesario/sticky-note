@@ -89,6 +89,11 @@ const NoteTakingApp = () => {
     setCurrentlyVisibleModal('TrashCan');
   }
 
+  // The problem now... is onClose and onCancel, which earlier called upon these. We can't close the modals now
+  function closeModal() {
+    setCurrentlyVisibleModal(null);
+  } // This feels... kinda like an ugly solution? But it works and I'm okay with it for v1 without googling or using AI
+
   function handleThemeToggle() {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   }
@@ -107,12 +112,12 @@ const NoteTakingApp = () => {
         </div>
         {currentlyVisibleModal === 'NewNote' && (
           <div className="modal-overlay">
-            <NewNoteModal onCreate={createNote} onCancel={handleNewNoteModalToggle} />
+            <NewNoteModal onCreate={createNote} onCancel={closeModal} />
           </div>
         )}
         {currentlyVisibleModal === 'TrashCan' && (
           <div className="modal-overlay">
-            <TrashCanModal notes={notes} onClose={handleTrashCanModalToggle} onRestore={restoreNote} onPermaDelete={deleteNote} />
+            <TrashCanModal notes={notes} onClose={closeModal} onRestore={restoreNote} onPermaDelete={deleteNote} />
           </div>
         )}
       </div>
